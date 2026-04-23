@@ -1,0 +1,19 @@
+mkdir -p ~/.config/alacritty && cat > ~/.config/alacritty/alacritty.toml << 'EOF'
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 11.0
+
+[window]
+padding = { x = 8, y = 8 }
+opacity = 0.95
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+]
+EOF
