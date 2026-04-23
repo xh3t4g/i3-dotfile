@@ -1,0 +1,123 @@
+# Основная клавиша (Super = Win)
+set $mod Mod4
+
+# Шрифт
+font pango:JetBrainsMono Nerd Font 10
+
+# ================================================================
+# АВТОЗАПУСК
+# ================================================================
+
+# Композитинг (прозрачность, тени)
+exec --no-startup-id picom -b
+
+# Обои
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+
+# Апплет сети в трее
+exec --no-startup-id nm-applet
+
+# Переключение языка через Caps Lock
+exec --no-startup-id setxkbmap -layout us,ru -option grp:caps_toggle
+
+# Панель статуса
+exec_always --no-startup-id polybar main
+
+# ================================================================
+# ОСНОВНЫЕ ШОРТКАТЫ
+# ================================================================
+
+# Открыть терминал
+bindsym $mod+Return exec alacritty
+
+# Лаунчер приложений
+bindsym $mod+d exec rofi -show drun
+
+# Закрыть окно
+bindsym $mod+q kill
+
+# Перезагрузить конфиг i3
+bindsym $mod+Shift+r restart
+
+# Выйти из i3
+bindsym $mod+Shift+e exec i3-msg exit
+
+# Заблокировать экран
+bindsym $mod+Shift+l exec i3lock
+
+# Скриншот
+bindsym Print exec flameshot gui
+
+# ================================================================
+# ФОКУС ОКОН (vim-стиль)
+# ================================================================
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# ================================================================
+# ПЕРЕМЕЩЕНИЕ ОКОН
+# ================================================================
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# ================================================================
+# ВОРКСПЕЙСЫ
+# ================================================================
+
+# Переключиться на воркспейс
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+
+# Переместить окно на воркспейс
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+
+# ================================================================
+# LAYOUT
+# ================================================================
+
+# Разделить горизонтально
+bindsym $mod+b split h
+
+# Разделить вертикально
+bindsym $mod+v split v
+
+# Полный экран
+bindsym $mod+f fullscreen toggle
+
+# Плавающий режим
+bindsym $mod+Shift+space floating toggle
+
+# ================================================================
+# ЗВУК
+# ================================================================
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# ================================================================
+# ЯРКОСТЬ (для ноутбука)
+# ================================================================
+
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# ================================================================
+# ОТСТУПЫ МЕЖДУ ОКНАМИ
+# ================================================================
+
+gaps inner 8
+gaps outer 4
