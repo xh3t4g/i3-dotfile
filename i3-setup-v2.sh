@@ -55,6 +55,7 @@ font pango:JetBrainsMono Nerd Font 10
 exec --no-startup-id picom -b
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec --no-startup-id nm-applet
+exec --no-startup-id setxkbmap -layout us,ru -option grp:caps_toggle
 exec_always --no-startup-id polybar main
 
 bindsym $mod+Return exec alacritty
@@ -193,4 +194,5 @@ echo "  Super + Shift+Space  float"
 echo "  Super + Shift+R      перезагрузить конфиг"
 echo "  Super + Shift+L      заблокировать экран"
 echo "  Print                скриншот"
+echo "  Caps Lock            переключить язык EN/RU"
 echo "================================================================"
